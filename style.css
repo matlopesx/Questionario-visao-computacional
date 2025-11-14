@@ -1,0 +1,168 @@
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Corpo === */
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #141628, #090a14);
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Quando o resumo é exibido */
+body.summary-active {
+  justify-content: flex-start;
+  padding: 40px 0;
+  overflow-y: auto;
+}
+
+/* === Título === */
+body > div:first-of-type {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #00e0ff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 224, 255, 0.8);
+}
+
+/* === Botão === */
+button {
+  background: linear-gradient(135deg, #00e0ff, #0077ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+  margin-bottom: 1.2rem;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.8);
+}
+
+/* === Canvas === */
+#canvas {
+  border: 2px solid rgba(0, 224, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 1rem;
+  transition: 0.5s ease;
+}
+
+#canvas.active {
+  box-shadow: 0 0 35px rgba(0, 224, 255, 0.6);
+}
+
+/* === Caixa de Perguntas === */
+#question-box {
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  max-width: 300px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+}
+
+#question {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+#timer {
+  font-size: 1rem;
+  color: #00e0ff;
+  margin-bottom: 0.5rem;
+}
+
+#answer {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* === Container de Labels === */
+#label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  width: 90%;
+  max-width: 280px;
+  margin-bottom: 2rem;
+}
+
+/* === Cada item de predição === */
+.prediction-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.prediction-item:hover {
+  background: rgba(0, 224, 255, 0.15);
+  transform: scale(1.02);
+}
+
+/* === Barra de progresso === */
+.progress-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00e0ff, #00ff99);
+  width: 0%;
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+/* === Animação inicial === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body > * {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* === Lista de Resumo === */
+#summary-list li {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+#summary-list li:hover {
+  background: rgba(0, 224, 255, 0.1);
+  transform: scale(1.02);
+}
